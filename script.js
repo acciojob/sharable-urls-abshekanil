@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	let button = document.getElementById('button');
 
 	button.addEventListener('click', function(){
+
+			event.preventDefault();
+		
 		if(nameInput.value !== '' && yearInput.value !== '')
 		{
 			urlLink.innerHTML = 'https://localhost:8080/?name='+nameInput.value+'&year='+yearInput.value;
@@ -18,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		else if(nameInput.value === '' && yearInput.value !== '' )
 		{
 			urlLink.innerHTML = 'https://localhost:8080/?year='+yearInput.value;
+		}
+		else
+		{
+			urlLink.innerHTML = 'https://localhost:8080/';
 		}
 	});
 	
